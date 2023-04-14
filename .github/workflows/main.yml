@@ -23,7 +23,7 @@ jobs:
           APP_ID: ${{ secrets.APP_ID }}
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action/v4-folder-perms
         with:
           branch: gh-pages
           folder: build 
