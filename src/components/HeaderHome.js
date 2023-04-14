@@ -1,5 +1,4 @@
 import React from "react";
-import biLogo from "./media/bi.png"
 import { faUsers } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
