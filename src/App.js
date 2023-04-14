@@ -18,10 +18,10 @@ function App() {
     <Router>
       <Navbar/>
       <Routes>
-        <Route path="/Banco-Errores"  element={<Home/>}/>
-        <Route path="/Documentacion"  element={<Documentacion/>}/>
-        <Route path="/Formulario"     element={<Formulario/>}/>
-        <Route path="/CargaMasiva"    element={<CargaMasiva/>}/>
+        <Route path="/Banco-Errores"                element={<Home/>}/>
+        <Route path="/Banco-Errores/Documentacion"  element={<Documentacion/>}/>
+        <Route path="/Banco-Errores/Formulario"     element={<Formulario/>}/>
+        <Route path="/Banco-Errores/CargaMasiva"    element={<CargaMasiva/>}/>
       </Routes>
 
     </Router>
