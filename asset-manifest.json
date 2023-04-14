@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Banco-Errores/static/css/main.55099464.css",
+    "main.js": "/Banco-Errores/static/js/main.b75ddaa8.js",
+    "index.html": "/Banco-Errores/index.html",
+    "main.55099464.css.map": "/Banco-Errores/static/css/main.55099464.css.map",
+    "main.b75ddaa8.js.map": "/Banco-Errores/static/js/main.b75ddaa8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.55099464.css",
+    "static/js/main.b75ddaa8.js"
+  ]
+}
