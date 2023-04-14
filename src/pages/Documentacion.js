@@ -22,15 +22,17 @@ class Documentacion extends React.Component {
         this.state.errores.forEach((doc) => {
             documents.push(
                 <Tarjeta
-                   x = {doc.data()}
                    key = {doc.id}
+                   x = {doc.data()}
+                   docID = {doc.id}
                 />
             )
         })
 
         return(
             <>
-            {documents}     
+            <h1 className="display-4 mt-4 mb-4" style={{textAlign: "center"}}>Repositorio de errores</h1>
+            {documents}
             </>
         );
     }

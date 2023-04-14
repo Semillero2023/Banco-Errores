@@ -20,11 +20,11 @@ class Tarjeta extends React.Component {
     }
 
     render() {
-        const { x, key } = this.props;
+        const { x, docID } = this.props;
         //Funcion de retorno de pagina   
         if (this.state.grande) {
             return (
-                <div key={key} className={styles.TarjetaExpandida} onClick={this.CambiarEstado}>
+                <div key={docID} className={styles.TarjetaExpandida} onClick={this.CambiarEstado}>
                     <div className={styles.TarjetaExpandidaEncabezado}>
                         <h5 className={styles.TextoEncabezadoExpandido}> Reporte completo del error {x['ID_Mensaje_Error']} </h5>
                     </div>
@@ -42,7 +42,7 @@ class Tarjeta extends React.Component {
         }
 
         return (
-            <div key={key} className={styles.Tarjeta} onClick={this.CambiarEstado}>
+            <div key={docID} className={styles.Tarjeta} onClick={this.CambiarEstado}>
                 <div className={styles.TarjetaEncabezado}>
                     <h5 className={styles.TextoEncabezado}> {x['ID_Mensaje_Error'] + " "} {x['Nombre_Error']} </h5>
                 </div>

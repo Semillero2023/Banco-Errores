@@ -3,6 +3,18 @@
   padding: 0;
 }
 
+a.navbar-link:link {
+  text-decoration: inherit;
+  color: white;
+  margin-right: 40px;
+}
+
+a.navbar-link:visited {
+  text-decoration: inherit;
+  color: white;
+  margin-right: 40px;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

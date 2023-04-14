@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faAddressBook, faClone, faCopy } from "@fortawesome/free-solid-svg-icons";
 import { Navbar, Nav, Container } from "react-bootstrap";
@@ -16,18 +17,30 @@ class NavbarComponent extends React.Component {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/">
+            {/* <Nav.Link href="/">
               <FontAwesomeIcon icon={faHome} /> Inicio
-            </Nav.Link>
-            <Nav.Link href="/Documentacion">
+            </Nav.Link> */}
+            <Link to="/" className="navbar-link">
+              <FontAwesomeIcon icon={faHome} /> Inicio
+            </Link>
+            {/* <Nav.Link href="/Documentacion">
               <FontAwesomeIcon icon={faAddressBook} /> Documentación de errores
-            </Nav.Link>
-            <Nav.Link href="/Formulario">
+            </Nav.Link> */}
+            <Link to="/Documentacion" className="navbar-link">
+              <FontAwesomeIcon icon={faAddressBook} /> Documentación de errores
+            </Link>
+            {/* <Nav.Link href="/Formulario">
               <FontAwesomeIcon icon={faClone} /> Añadir error
-            </Nav.Link>
-            <Nav.Link href="/CargaMasiva">
+            </Nav.Link> */}
+            <Link to="/Formulario" className="navbar-link">
+              <FontAwesomeIcon icon={faClone} /> Añadir error
+            </Link>
+            {/* <Nav.Link href="/CargaMasiva">
               <FontAwesomeIcon icon={faCopy} /> Carga Masiva de errores
-            </Nav.Link>
+            </Nav.Link> */}
+            <Link to="/CargaMasiva" className="navbar-link">
+              <FontAwesomeIcon icon={faCopy} /> Carga Masiva de errores
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

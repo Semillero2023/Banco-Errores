@@ -134,6 +134,8 @@ class Formulario extends React.Component {
 
     render() {
         return (
+          <>
+          <h1 className="display-4 mt-4 mb-4" style={{textAlign: "center"}}>Añadir nuevo error</h1>
       <Container className="mb-4 mt-4">
         <Row>
           <Col md={2}></Col>
@@ -305,6 +307,7 @@ class Formulario extends React.Component {
             <Col xs lg="2"> </Col> 
         </Row>
       </Container>
+          </>
         );
     }
 }
