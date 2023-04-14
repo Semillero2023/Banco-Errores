@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -23,7 +26,7 @@ jobs:
           APP_ID: ${{ secrets.APP_ID }}
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@releases/v4-folder-perms
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: build 
