@@ -30,7 +30,7 @@ class HeaderHome extends React.Component {
               </div>
             </div>
             <div className="col-md-4 d-none d-sm-none d-md-block">
-              <img src={biLogo} alt="tours pics" className="img-fluid" />
+              {/*<img src={biLogo} alt="tours pics" className="img-fluid" />*/}
             </div>
           </div>
         </div>
