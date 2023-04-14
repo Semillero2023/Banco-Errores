@@ -19,13 +19,13 @@ class NavbarComponent extends React.Component {
             <Nav.Link href="/Banco-Errores">
               <FontAwesomeIcon icon={faHome} /> Inicio
             </Nav.Link>
-            <Nav.Link href="/Documentacion">
+            <Nav.Link href="/Banco-Errores/Documentacion">
               <FontAwesomeIcon icon={faAddressBook} /> Documentación de errores
             </Nav.Link>
-            <Nav.Link href="/Formulario">
+            <Nav.Link href="/Banco-Errores/Formulario">
               <FontAwesomeIcon icon={faClone} /> Añadir error
             </Nav.Link>
-            <Nav.Link href="/CargaMasiva">
+            <Nav.Link href="/Banco-Errores/CargaMasiva">
               <FontAwesomeIcon icon={faCopy} /> Carga Masiva de errores
             </Nav.Link>
           </Nav>
