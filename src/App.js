@@ -1,5 +1,5 @@
 // import { useEffect } from "react";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import './index.css'
 // import pages
 import Home from "./pages/Home";
@@ -15,16 +15,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
 
   return (
-    <Router>
-      <Navbar/>
+    <>
+      <Navbar />
       <Routes>
-        <Route path="/Banco-Errores"                element={<Home/>}/>
-        <Route path="/Banco-Errores/Documentacion"  element={<Documentacion/>}/>
-        <Route path="/Banco-Errores/Formulario"     element={<Formulario/>}/>
-        <Route path="/Banco-Errores/CargaMasiva"    element={<CargaMasiva/>}/>
+        <Route path="/Banco-Errores" element={<Home />} />
+        <Route path="/Banco-Errores/Documentacion" element={<Documentacion />} />
+        <Route path="/Banco-Errores/Formulario" element={<Formulario />} />
+        <Route path="/Banco-Errores/CargaMasiva" element={<CargaMasiva />} />
       </Routes>
-
-    </Router>
+    </>
   );
 }
 
