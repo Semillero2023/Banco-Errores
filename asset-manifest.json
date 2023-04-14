@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Banco-Errores/static/css/main.55099464.css",
-    "main.js": "/Banco-Errores/static/js/main.ddbdfc1b.js",
+    "main.css": "/Banco-Errores/static/css/main.b20aa38e.css",
+    "main.js": "/Banco-Errores/static/js/main.c713ad0a.js",
     "index.html": "/Banco-Errores/index.html",
-    "main.55099464.css.map": "/Banco-Errores/static/css/main.55099464.css.map",
-    "main.ddbdfc1b.js.map": "/Banco-Errores/static/js/main.ddbdfc1b.js.map"
+    "main.b20aa38e.css.map": "/Banco-Errores/static/css/main.b20aa38e.css.map",
+    "main.c713ad0a.js.map": "/Banco-Errores/static/js/main.c713ad0a.js.map"
   },
   "entrypoints": [
-    "static/css/main.55099464.css",
-    "static/js/main.ddbdfc1b.js"
+    "static/css/main.b20aa38e.css",
+    "static/js/main.c713ad0a.js"
   ]
 }
