@@ -42,7 +42,13 @@ class Tarjeta extends React.Component {
         }
 
         return (
-            <div key={docID} className={styles.Tarjeta} onClick={this.CambiarEstado}>
+            <div key={docID} className={`${styles.Tarjeta}
+                ${x['Complejidad'] === "1" ? styles.Tarjeta_Nivel_1 : ""}
+                ${x['Complejidad'] === "2" ? styles.Tarjeta_Nivel_2 : ""}
+                ${x['Complejidad'] === "3" ? styles.Tarjeta_Nivel_3 : ""}
+                ${x['Complejidad'] === "4" ? styles.Tarjeta_Nivel_4 : ""}
+                ${x['Complejidad'] === "5" ? styles.Tarjeta_Nivel_5 : ""}
+            `} onClick={this.CambiarEstado}>
                 <div className={styles.TarjetaEncabezado}>
                     <h5 className={styles.TextoEncabezado}> {x['ID_Mensaje_Error'] + " "} {x['Nombre_Error']} </h5>
                 </div>

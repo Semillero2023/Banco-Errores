@@ -1,0 +1,11 @@
+.texto{
+    color:rgb(235, 235, 235);
+}
+.Brillo{
+    font-size: 110%;
+    color: rgba(199, 229, 240, 0.966);
+    text-shadow: 0 0 10px #03bcf4,
+    0 0 20px #03bcf4,
+    0 0 40px #03bcf4,
+    0 0 80px #03bcf4;
+}

@@ -1,19 +1,40 @@
 import React from "react";
 import { showErrors } from "../querys/getAllDocs";
 import Tarjeta from "../components/Tarjeta";
+import styles from "../components/styles/Documentacion.module.css";
+/* COSAS PARA LA LIBRERIA DEL SCROLLBAR */
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+import { SlideNextButton } from "../components/BotonAvanzar"
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import 'swiper/css/navigation';
+// import required modules
+import { EffectCoverflow, Keyboard , Scrollbar, A11y} from "swiper";
+import { Container } from "react-bootstrap";
+/*COSAS PARA SEPARAR LAS DOCUMENTACIONES EN PAGINACIONES */
+import ReactPaginate from "react-paginate";
+
 
 class Documentacion extends React.Component {
 
     state = {
-        errores : []
+        errores : [],
+        PageNumber : 0
+    }
+
+    CambiarPagina = (e) => {
+        this.setState({
+            PageNumber : e.selected 
+        }) 
+        console.log(e.selected);
     }
 
     async componentDidMount(){
         const arrayErrores = await showErrors()
         this.setState({errores : arrayErrores})
-        // arrayErrores.forEach((doc) => {
-        //    console.log(doc.id, " => ", doc.data());
-        // });
     }
 
     render(){
@@ -21,18 +42,82 @@ class Documentacion extends React.Component {
         const documents = [];
         this.state.errores.forEach((doc) => {
             documents.push(
-                <Tarjeta
-                   key = {doc.id}
-                   x = {doc.data()}
-                   docID = {doc.id}
-                />
+                <SwiperSlide>
+                    <Tarjeta
+                    key = {doc.id}
+                    x = {doc.data()}
+                    docID = {doc.id}
+                    />                
+                </SwiperSlide>   
             )
         })
 
+        
+        const ItemsPorPag = 5;
+
+        //Separa los componentes de documentaciones en subarreglos
+        const MatrizSub = [];
+        for (var i=0; i<documents.length ; i = i+ ItemsPorPag) {
+            var TempArr = documents.slice(i, i + ItemsPorPag);
+            MatrizSub.push(TempArr);
+        }
+
+
+        //En base a la matriz de subarreglos, se crea una matriz de carrouseles, cada una con su 
+        //Paginacion
+        const MatrizCarrousel = [];
+        MatrizSub.forEach((x) => {
+            MatrizCarrousel.push(
+                <SwiperSlide>
+                    <Swiper
+                        effect={"coverflow"}
+                        grabCursor={true}
+                        mousewheel={true}
+                        keyboard={true}
+                        centeredSlides={true}
+                        slidesPerView={"auto"}
+                        coverflowEffect={{
+                            rotate: 0,
+                            stretch: 0,
+                            depth: 500,
+                            modifier: 4,
+                            slideShadows: false,
+                        }}
+                        modules={[EffectCoverflow, Keyboard, Scrollbar, A11y]} 
+                        className="mySwiper"
+                    >       
+                    <Container>
+                        {x} 
+                    </Container>  
+                    <Container>
+                        <SlideNextButton/>  
+                    </Container>    
+                    </Swiper>   
+                </SwiperSlide>             
+            )
+        })
+        //Contador de paginas
+        const ContPag = Math.ceil(MatrizCarrousel.length);
+      
+        //La matriz d carrouseles se retorna como un solo corrosuel vertical
         return(
             <>
-            <h1 className="display-4 mt-4 mb-4" style={{textAlign: "center"}}>Repositorio de errores</h1>
-            {documents}
+            <main>
+            </main>
+            <h1 className="display-4 mt-2 mb-2" style={{textAlign: "center", color: "white"}}>Repositorio de errores</h1>
+            <Container >
+                {MatrizCarrousel[this.state.PageNumber]}
+                <ReactPaginate
+                previousLabel={"Ant. Pag."}
+                nextLabel={"Sig. Pag."}
+                pageCount={ContPag}
+                onPageChange={this.CambiarPagina}
+                containerClassName={styles.pagbutton}
+                previousLinkClassName={"prevbutton"}
+                nextLinkClassName={"nextbutton"}
+                activeClassName={"activebutton"}
+                />
+             </Container>
             </>
         );
     }

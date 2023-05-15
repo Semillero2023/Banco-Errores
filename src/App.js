@@ -8,15 +8,12 @@ import CargaMasiva from "./pages/CargaMasiva";
 import Busquedas from "./pages/Busquedas";
 // import components
 import Navbar from "./components/Navbar";
-// Bootstrap CSS
-import "bootstrap/dist/css/bootstrap.min.css";
-
-
+import FondoInicio from "./components/FondoInicio";
 function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Documentacion" element={<Documentacion />} />
@@ -24,6 +21,7 @@ function App() {
         <Route path="/CargaMasiva" element={<CargaMasiva />} />
         <Route path="/Busquedas" element={<Busquedas />} />
       </Routes>
+      <FondoInicio/>
     </>
   );
 }

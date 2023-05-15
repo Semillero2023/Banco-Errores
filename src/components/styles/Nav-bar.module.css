@@ -1,0 +1,77 @@
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+nav {
+  background-color: rgba(255, 255, 255, 0);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+  margin-top: 1%;
+}
+
+nav a {
+  position: relative;
+  text-decoration: inherit;
+  color: white;
+  margin-right: 20px;
+  font-size: 100%;
+  padding-bottom: 1%;
+}
+
+nav a:hover {
+  font-size: 110%;
+  text-decoration: inherit;
+  outline: none;
+  transition: 0.3s;
+  color: rgba(255, 255, 255, 0.966);
+  text-shadow: 0 0 10px #03bcf4,
+  0 0 20px #03bcf4,
+  0 0 40px #03bcf4,
+  0 0 80px #03bcf4;
+}
+
+/* ANIMACION INICIO
+nav a:hover {
+  font-size: 110%;
+  text-decoration: inherit;
+  outline: none;
+  animation: animate 0.5s linear forwards;
+}
+@keyframes animate {
+  0% {
+    color: rgba(255, 255, 255, 0.621);
+    text-shadow: none;
+  }
+  100% {
+    color: rgba(255, 255, 255, 0.966);
+    text-shadow: 0 0 10px #03bcf4,
+    0 0 20px #03bcf4,
+    0 0 40px #03bcf4,
+    0 0 80px #03bcf4,
+    0 0 150px #03bcf4;
+  }
+}
+ANIMACION FIN*/
+/*Animacion de barrita*/
+nav a:after {
+  content: '';
+  position: absolute;
+  background-color: rgb(188, 222, 222);
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10%;
+  transition: 0.5s;
+}
+
+nav a:hover:after {
+  box-sizing: content-box;
+  width: 100%;
+}
+
+/*Fin Animacion de barrita*/

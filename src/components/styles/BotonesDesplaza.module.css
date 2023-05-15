@@ -1,0 +1,38 @@
+.Boton {
+    width: 7.5vh;
+    height: 7.5vh;
+    position: relative;
+    margin-bottom: 5%;
+    bottom: 0%;
+    left: 50%;
+    background-color: rgba(170, 232, 241, 0.232);
+    color: rgba(205, 229, 249, 0.857);
+    border-radius: 100%;
+    border-color: rgba(188, 226, 239, 0.874);
+    transform: translateY(-100%);
+}
+
+.sig{
+    transform: translateX(200%);
+}
+
+.ant{
+    transform: translateX(-300%);
+}
+
+.Boton:hover{
+    transition: 0.3s;
+    background-color: rgba(170, 231, 241, 0.524);
+    border-style:groove;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #cff2fc,
+    0 0 40px #d4eef6ad;
+}
+
+.Pagsig{
+    transform: translateX(500%);
+}
+
+.Pagant{
+    transform: translateX(-600%);
+}

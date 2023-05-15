@@ -1,0 +1,40 @@
+.parallax {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    /* 100 vh y vw hace referencia al tamanio completo de la ventana */
+    height: 100vh;
+    width: 100vw;
+    /*Fondo */
+    background-image: url("../media/FONDO.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -4;
+}
+img {
+    position: absolute;
+    width: 100%;
+    pointer-events: none;
+}
+img#Hollow {
+    bottom: 35vh;
+    transform: translateX(5%) translateY(58%) scale(0.15);
+    z-index: -4;
+}
+
+
+img#suelo {
+    position: fixed;
+    bottom: 0vh;
+    transform: translateY(20%) scaleY(0.7);
+    z-index: -1;
+    
+}
+img#rocas {
+    position: fixed;
+    top: 0vh;
+    transform: translateX(5%) translateY(-25%) scale(0.75);
+    z-index: -1;
+}

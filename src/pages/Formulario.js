@@ -2,7 +2,9 @@ import React from "react";
 import { addError } from "../querys/insert";
 import { refreshPage } from "../querys/utils";
 import { Button, Col, Container, Row, Form } from 'react-bootstrap';
-import styles from './styles/estilo.module.css'
+import styles from '../components/styles/formulario.module.css'
+// Bootstrap CSS
+import "bootstrap/dist/css/bootstrap.min.css";
 
 class Formulario extends React.Component {
 
@@ -106,6 +108,31 @@ class Formulario extends React.Component {
         }
     }
 
+        //Verificar la longitud
+        Verificar = () => {
+          if (
+            this.state.Nombre_Error.length > 0 &&
+            this.state.Nombre_Error.length > 0 &&
+            this.state.Tipo_Error.length > 0 &&
+            this.state.Codigo_Retorno.toString().length > 0 &&
+            this.state.ID_Mensaje_Error.length > 0 &&
+            this.state.Complejidad.length > 0 &&
+            this.state.Reportado_Por.length > 0 &&
+            this.state.Fecha.length > 0 &&
+            this.state.Resultado_Esperado.length > 0 &&
+            this.state.Resultado_Obtenido.length > 0 &&
+            this.state.Descripcion_Error.length > 0 &&
+            this.state.Solucion.length > 0 &&
+            this.state.Fuentes.length > 0 
+          ) {
+            this.Submitir();
+            
+          }
+          else {
+            alert("Por favor, ingresa todos los datos");
+          }
+        }
+
     //Cambiar entre Abend y File Status
     ActivarFileStatus = () => {
         this.setState({
@@ -135,7 +162,8 @@ class Formulario extends React.Component {
     render() {
         return (
           <>
-          <h1 className="display-4 mt-4 mb-4" style={{textAlign: "center"}}>Añadir nuevo error</h1>
+          <main></main>
+          <h1 className="display-4 mt-4 mb-4" style={{textAlign: "center", color: "white"}}>Añadir nuevo error</h1>
       <Container className="mb-4 mt-4">
         <Row>
           <Col md={2}></Col>
@@ -302,7 +330,7 @@ class Formulario extends React.Component {
         <Row>
             <Col xs lg="2"></Col>
             <Col md="auto">
-              <Button onClick={this.Submitir} variant="secondary" size="lg">Subir mi solucion</Button>
+              <Button onClick={this.Verificar} variant="secondary" size="lg">Subir mi solucion</Button>
             </Col>
             <Col xs lg="2"> </Col> 
         </Row>
