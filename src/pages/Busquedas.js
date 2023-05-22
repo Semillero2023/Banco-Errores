@@ -5,6 +5,7 @@ class Busquedas extends React.Component {
 
         return (
             // arrayErrores.forEach((doc) => {
+                //    console.log(doc.id, " => ", doc.data());
             <></>
         );
     }
