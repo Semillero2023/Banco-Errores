@@ -1,9 +1,10 @@
 import React from "react";
 
 class Busquedas extends React.Component {
-    render(){
+    render() {
 
-        return(
+        return (
+            // arrayErrores.forEach((doc) => {
             <></>
         );
     }
