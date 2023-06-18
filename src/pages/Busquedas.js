@@ -1,10 +1,13 @@
 import React from "react";
+import BusquedaError from "../components/BusquedaError";
 
 class Busquedas extends React.Component {
-    render(){
+    render() {
 
-        return(
-            <></>
+        return (           
+            <>
+                <BusquedaError/>
+            </>
         );
     }
 }
