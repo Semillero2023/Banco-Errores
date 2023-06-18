@@ -1,10 +1,59 @@
 import React from "react";
 import { Container } from 'react-bootstrap';
+import { searchMessageID, searchReturnCode } from "../querys/searchErrors";
+import Tarjeta from "./Tarjeta";
+import styles from "./styles/Documentacion.module.css";
+/* COSAS PARA LA LIBRERIA DEL SCROLLBAR */
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+import { SlideNextButton } from "../components/BotonAvanzar"
+// import required modules
+import { EffectCoverflow, Keyboard , Scrollbar, A11y} from "swiper";
+/*COSAS PARA SEPARAR LAS DOCUMENTACIONES EN PAGINACIONES */
+import ReactPaginate from "react-paginate";
+/*Estilos*/  
 import "./styles/radiobutons.css"
 import "./styles/searchbox.css"
 
+
+
 function BusquedaError() {
 
+    handleClick = () => {
+        try {
+            let type = document.getElementsByName("tools");
+            let filter = document.getElementById("search").value;
+            type.forEach(async radio => {
+                if (radio.checked) {
+                    switch (radio.value) {
+
+                        case "IdError":
+                            const responseId = await this.getErrorsByIdMessage(filter);
+                            this.fillRows(responseId);
+                            break;
+
+                        default:
+                            //RC, FS, AB
+                            const responseCode = await this.getErrorsByReturnCode(radio.value, filter);
+                            this.fillRows(responseCode);
+                            break;
+                    }
+                }
+            })
+        } catch (error) {
+            alert(error.message);
+        }
+    }
+
+    getErrorsByIdMessage = async (filter) => {
+        const response = await searchMessageID(filter);
+        return response
+    }
+
+    getErrorsByReturnCode = async (type, filter) => {
+        const response = await searchReturnCode(type, filter);
+        return response
+    }
 
     return (
         <>
@@ -77,7 +126,7 @@ function BusquedaError() {
                                 <input id="search" type="text" placeholder="Inserte filtro de Busqueda" />
                             </div>
                             <div className="input-field third-wrap">
-                                <button className="btn-search" type="button">
+                                <button className="btn-search" type="button" onClick={this.handleClick}>
                                     Buscar
                                 </button>
                             </div>

@@ -27,3 +27,14 @@ export const searchReturnCode = async (tipo, codigo) => {
         throw new Error(error);
     }
 }
+
+export const searchReportadoPor = async (nombre) => {
+    try {
+        const q = query(collectionReference, where("Reportado_Por", ">=", nombre));
+        const querySnapshot = await getDocs(q);
+        return querySnapshot;
+
+    } catch (error) {
+        throw new Error(error);
+    }
+}
