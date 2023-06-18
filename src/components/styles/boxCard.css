@@ -1,0 +1,77 @@
+
+/* ======================================================== */
+.card {
+  padding: 25px;
+  width: 60%;
+  height: 50hv;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 5vh;
+  margin-top: 2vh;
+  overflow: hidden;
+  align-items: center;
+  background: linear-gradient(
+    25deg,
+    rgba(19, 19, 121, 0.600) 0%,
+    rgba(1, 255, 255, 0.600) 86%  
+  );
+}
+
+.sneaaker-img {
+  width: 25%;
+}
+
+.title{
+  width: 100%;
+  color: rgb(220, 220, 220);
+}
+
+.card h5 {
+  width: 100%;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(220, 220, 220);
+}
+
+/* Complejidad */
+.sizes-box {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: right;
+  gap: 10px;
+}
+.sizes-box li {
+  list-style: none;
+  font-weight: bold;
+  border-radius: 30px;
+  padding: 0.5rem 1.5rem;
+  background-color: rgb(220, 220, 220);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+/* Botón */
+.button-box {
+  width: 100%;
+}
+.purchase {
+  cursor: pointer;
+  width: 100%;
+  border-radius: 30px;
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
+  border: none;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  background-color: rgba(15, 95, 187, 0.9);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.purchase:hover {
+  background-color: rgba(58, 207, 245, 0.872);
+}

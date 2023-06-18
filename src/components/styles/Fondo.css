@@ -13,26 +13,30 @@
     background-position: center;
     z-index: -4;
 }
-img {
+
+#Hollow,
+#suelo,
+#rocas {
     position: absolute;
     width: 100%;
     pointer-events: none;
 }
-img#Hollow {
+
+#Hollow {
     bottom: 35vh;
     transform: translateX(5%) translateY(58%) scale(0.15);
     z-index: -4;
 }
 
-
-img#suelo {
+#suelo {
     position: fixed;
     bottom: 0vh;
     transform: translateY(20%) scaleY(0.7);
     z-index: -1;
     
 }
-img#rocas {
+
+#rocas {
     position: fixed;
     top: 0vh;
     transform: translateX(5%) translateY(-25%) scale(0.75);

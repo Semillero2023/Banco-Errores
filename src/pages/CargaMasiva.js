@@ -5,7 +5,6 @@ class CargaMasiva extends React.Component {
 
         return(
             <>
-            <h1>Test</h1>
             </>
         );
     }
