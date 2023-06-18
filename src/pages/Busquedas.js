@@ -1,12 +1,13 @@
 import React from "react";
+import BusquedaError from "../components/BusquedaError";
 
 class Busquedas extends React.Component {
     render() {
 
-        return (
-            // arrayErrores.forEach((doc) => {
-                //    console.log(doc.id, " => ", doc.data());
-            <></>
+        return (           
+            <>
+                <BusquedaError/>
+            </>
         );
     }
 }
