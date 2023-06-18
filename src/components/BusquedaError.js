@@ -8,16 +8,16 @@ import styles from "./styles/Documentacion.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { SlideNextButton } from "../components/BotonAvanzar"
 // import required modules
-import { EffectCoverflow, Keyboard , Scrollbar, A11y} from "swiper";
+import { EffectCoverflow, Keyboard, Scrollbar, A11y } from "swiper";
 /*COSAS PARA SEPARAR LAS DOCUMENTACIONES EN PAGINACIONES */
 import ReactPaginate from "react-paginate";
-/*Estilos*/  
+/*Estilos*/
 import "./styles/radiobutons.css"
 import "./styles/searchbox.css"
 
 
 
-function BusquedaError() {
+class BusquedaError extends React.Component {
 
     handleClick = () => {
         try {
@@ -55,10 +55,11 @@ function BusquedaError() {
         return response
     }
 
-    return (
-        <>
-            <Container className="mb-4 mt-4 container" style={{ textAlign: "center", color: "white" }}>
-                <div className="section over-hide z-bigger">
+    render() {
+        return (
+            <>
+                <Container className="mb-4 mt-4 container" style={{ textAlign: "center", color: "white" }}>
+                    <div className="section over-hide z-bigger">
                         <div className="container">
                             <div className="row justify-content-center">
                                 <div className="col-12">
@@ -116,26 +117,27 @@ function BusquedaError() {
                                 </div>
                             </div>
                         </div>
-                </div>
-            </Container>
-            <Container className="mb-4 mt-4 container" style={{ textAlign: "center", color: "white", width: "100%", maxWidth: "600px" }}>
-                <div className="s132">
-                    <form>
-                        <div className="inner-form">
-                            <div className="input-field second-wrap">
-                                <input id="search" type="text" placeholder="Inserte filtro de Busqueda" />
+                    </div>
+                </Container>
+                <Container className="mb-4 mt-4 container" style={{ textAlign: "center", color: "white", width: "100%", maxWidth: "600px" }}>
+                    <div className="s132">
+                        <form>
+                            <div className="inner-form">
+                                <div className="input-field second-wrap">
+                                    <input id="search" type="text" placeholder="Inserte filtro de Busqueda" />
+                                </div>
+                                <div className="input-field third-wrap">
+                                    <button className="btn-search" type="button" onClick={this.handleClick}>
+                                        Buscar
+                                    </button>
+                                </div>
                             </div>
-                            <div className="input-field third-wrap">
-                                <button className="btn-search" type="button" onClick={this.handleClick}>
-                                    Buscar
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </Container>
-        </>
-    );
+                        </form>
+                    </div>
+                </Container>
+            </>
+        );
+    }
 }
 
 export default BusquedaError;
