@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Banco-Errores/static/css/main.ae3ae080.css",
-    "main.js": "/Banco-Errores/static/js/main.c8aeeb6b.js",
+    "main.css": "/Banco-Errores/static/css/main.e9ce8719.css",
+    "main.js": "/Banco-Errores/static/js/main.12afd347.js",
     "static/media/FONDO.png": "/Banco-Errores/static/media/FONDO.8d70906968ff985186f5.png",
     "static/media/HK.gif": "/Banco-Errores/static/media/HK.11c36fe991c826cb8540.gif",
     "static/media/ROCAS.png": "/Banco-Errores/static/media/ROCAS.3beda9bfa9d291e057b1.png",
     "static/media/SUELO.png": "/Banco-Errores/static/media/SUELO.051bb0f95541a219e886.png",
     "index.html": "/Banco-Errores/index.html",
-    "main.ae3ae080.css.map": "/Banco-Errores/static/css/main.ae3ae080.css.map",
-    "main.c8aeeb6b.js.map": "/Banco-Errores/static/js/main.c8aeeb6b.js.map"
+    "main.e9ce8719.css.map": "/Banco-Errores/static/css/main.e9ce8719.css.map",
+    "main.12afd347.js.map": "/Banco-Errores/static/js/main.12afd347.js.map"
   },
   "entrypoints": [
-    "static/css/main.ae3ae080.css",
-    "static/js/main.c8aeeb6b.js"
+    "static/css/main.e9ce8719.css",
+    "static/js/main.12afd347.js"
   ]
 }
