@@ -2,6 +2,7 @@ import React from "react";
 import { showErrors } from "../querys/getAllDocs";
 import Tarjeta from "../components/Tarjeta";
 import styles from "../components/styles/Documentacion.module.css";
+import Loading from "../components/Loading";
 /* COSAS PARA LA LIBRERIA DEL SCROLLBAR */
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -16,13 +17,17 @@ import { EffectCoverflow, Keyboard , Scrollbar, A11y} from "swiper";
 import { Container } from "react-bootstrap";
 /*COSAS PARA SEPARAR LAS DOCUMENTACIONES EN PAGINACIONES */
 import ReactPaginate from "react-paginate";
+//Importo loader
 
 
 class Documentacion extends React.Component {
 
     state = {
         errores : [],
-        PageNumber : 0
+        PageNumber : 0,
+        data: [],
+        loading: true,
+        error: null       
     }
 
     CambiarPagina = (e) => {
@@ -33,11 +38,31 @@ class Documentacion extends React.Component {
     }
 
     async componentDidMount(){
-        const arrayErrores = await showErrors()
-        this.setState({errores : arrayErrores})
+        await this.fetchConsulta();
     }
 
+    fetchConsulta = async  () => {
+        try{
+            const arrayErrores = await showErrors()
+            this.setState({
+                errores : arrayErrores,
+                loading: false
+            })
+        }
+        catch(error){
+            this.setState({
+                loading: false
+            })            
+            console.log("Error 404")
+        }
+    }
     render(){
+
+        // Retornando Componentes con sus props respectivos
+        if (this.state.loading) {
+            return <Loading/>
+        }
+
 
         const documents = [];
         this.state.errores.forEach((doc) => {
@@ -98,7 +123,8 @@ class Documentacion extends React.Component {
         })
         //Contador de paginas
         const ContPag = Math.ceil(MatrizCarrousel.length);
-      
+        
+
         //La matriz d carrouseles se retorna como un solo corrosuel vertical
         return(
             <>
