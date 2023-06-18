@@ -1,6 +1,9 @@
 import React from "react";
 import { showErrors } from "../querys/getAllDocs";
-import Tarjeta from "../components/Tarjeta";
+/* TARJETA 2 */
+import BoxCard from "../components/boxCard";
+/* TARJETA 1 */
+//import Tarjeta from "../components/Tarjeta";
 import styles from "../components/styles/Documentacion.module.css";
 import Loading from "../components/Loading";
 /* COSAS PARA LA LIBRERIA DEL SCROLLBAR */
@@ -68,11 +71,16 @@ class Documentacion extends React.Component {
         this.state.errores.forEach((doc) => {
             documents.push(
                 <SwiperSlide>
-                    <Tarjeta
+                    <BoxCard
+                    key = {doc.id}
+                    errorObject = {doc.data()}
+                    docID = {doc.id}
+                    />
+                    {/*<Tarjeta
                     key = {doc.id}
                     x = {doc.data()}
                     docID = {doc.id}
-                    />                
+            />*/}                
                 </SwiperSlide>   
             )
         })
@@ -130,7 +138,7 @@ class Documentacion extends React.Component {
             <>
             <main>
             </main>
-            <h1 className="display-4 mt-2 mb-2" style={{textAlign: "center", color: "white"}}>Repositorio de errores</h1>
+            <h1 className="mt-2 mb-4" style={{textAlign: "center", color: "white"}}>Repositorio de errores</h1>
             <Container >
                 {MatrizCarrousel[this.state.PageNumber]}
                 <ReactPaginate

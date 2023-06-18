@@ -3,8 +3,6 @@ import { addError } from "../querys/insert";
 import { refreshPage } from "../querys/utils";
 import { Button, Col, Container, Row, Form } from 'react-bootstrap';
 import styles from '../components/styles/formulario.module.css'
-// Bootstrap CSS
-import "bootstrap/dist/css/bootstrap.min.css";
 
 class Formulario extends React.Component {
 
