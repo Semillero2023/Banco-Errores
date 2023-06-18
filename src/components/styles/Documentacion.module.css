@@ -278,3 +278,39 @@ main{
     color: #dbf1ff;
     cursor: pointer;
 }
+
+/*
+--------------------------------------------
+    BOTON DE REPORTE
+--------------------------------------------
+*/
+.generdadorPDF {
+    width: 15%;
+    height: auto;
+    background-color: #282828;
+    color: #dbf1ff;
+    border: 1px solid  #dbf1ff;
+    padding: 10px;
+    margin: 0%;
+    border-radius: 5%;
+}
+
+.generdadorPDF:hover {
+    width: 17%;
+    height: auto;
+    background-color: #38383861;
+    color: #dbf1ff;
+    border: 2px solid  #dbf1ff;
+    padding: 10px;
+    margin: 0%;
+    border-radius: 5%;
+}
+
+.fondoPDF {
+    background-color: #28282800;
+    border: 0px solid  #dbf1ff00;
+}
+.fondoPDF:hover {
+    background-color: #28282800;
+    border: 0px solid  #dbf1ff00;
+}

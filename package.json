@@ -13,6 +13,7 @@
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.2.3",
     "firebase": "^9.19.1",
+    "framer-motion": "^10.12.16",
     "hash-router": "^0.4.0",
     "jquery": "^3.6.4",
     "react": "^18.2.0",

@@ -3,14 +3,43 @@ import React from 'react';
 import Reporte from './Reporte';
 //Importar css
 import styles from './styles/Documentacion.module.css'
-import { PDFDownloadLink } from '@react-pdf/renderer';
-import { Button } from 'react-bootstrap';
+// Importar bootstrap
+import { Row } from 'react-bootstrap';
+import { PDFViewer } from '@react-pdf/renderer';
 
 class Tarjeta extends React.Component {
+    //Evalua si la tajeta se debera expandir o no  
+    state = {
+        grande: false
+    }
 
+    CambiarEstado = () => {
+        this.setState({
+            grande: !this.state.grande
+        })
+    }
 
     render() {
         const { x, docID } = this.props;
+        //Funcion de retorno de pagina   
+        if (this.state.grande) {
+            return (
+                <div key={docID} className={styles.TarjetaExpandida} onClick={this.CambiarEstado}>
+                    <div className={styles.TarjetaExpandidaEncabezado}>
+                        <h5 className={styles.TextoEncabezadoExpandido}> Reporte completo del error {x['ID_Mensaje_Error']} </h5>
+                    </div>
+                    <div className={styles.TextoTarjetaExpandida}>
+                        <Row>
+                            <PDFViewer style={{ width: '100%', height: '90vh' }}>
+                                <Reporte
+                                    x={x}
+                                />
+                            </PDFViewer>
+                        </Row>
+                    </div>
+                </div>
+            );
+        }
 
         return (
             <div key={docID} className={`${styles.Tarjeta}
@@ -19,25 +48,10 @@ class Tarjeta extends React.Component {
                 ${x['Complejidad'] === "3" ? styles.Tarjeta_Nivel_3 : ""}
                 ${x['Complejidad'] === "4" ? styles.Tarjeta_Nivel_4 : ""}
                 ${x['Complejidad'] === "5" ? styles.Tarjeta_Nivel_5 : ""}
-            `}>
+            `} onClick={this.CambiarEstado}>
                 <div className={styles.TarjetaEncabezado}>
                     <h5 className={styles.TextoEncabezado}> {x['ID_Mensaje_Error'] + " "} {x['Nombre_Error']} </h5>
                 </div>
-
-                <Button className={styles.fondoPDF} variant="link">
-                    <PDFDownloadLink 
-                        document={
-                            <Reporte
-                            x={x}
-                            />                               
-                        }
-                        fileName={x['Nombre_Error']}
-                        className={styles.generdadorPDF}
-                    >  
-                    {({ blob, url, loading, error }) => (loading ? 'Preparando PDF' : 'Descargar PDF')}
-                    </PDFDownloadLink>
-                </Button>
-
                 <div className={`${styles.CajonValoracion} ${x['Complejidad'] === "1" ? styles.Nivel_1 : ""}
                                                         ${x['Complejidad'] === "2" ? styles.Nivel_2 : ""}
                                                         ${x['Complejidad'] === "3" ? styles.Nivel_3 : ""}
@@ -56,9 +70,6 @@ class Tarjeta extends React.Component {
                         {x['Descripcion_Error']}
                     </p>
                 </div>
-
-
-
             </div>
         );
     }

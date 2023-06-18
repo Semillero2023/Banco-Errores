@@ -1,6 +1,6 @@
 import React from "react";
 //Compoente de PDF
-import { Document, Page, Text, StyleSheet, Font } from '@react-pdf/renderer'
+import { Document, Page, Text, StyleSheet, Font, View } from '@react-pdf/renderer'
 
 class Reporte extends React.Component {
 
@@ -9,8 +9,8 @@ class Reporte extends React.Component {
         
         //Plantilla de estilos
         Font.register({
-          family: 'Oswald',
-          src: 'https://fonts.gstatic.com/s/oswald/v13/Y_TKV6o8WovbUd3m_X9aAA.ttf'
+          family: 'Roboto',
+          src: 'http://fonts.gstatic.com/s/roboto/v16/zN7GBFwfMP4uA6AR0HCoLQ.ttf'
         });
         
         const styles = StyleSheet.create({
@@ -18,11 +18,18 @@ class Reporte extends React.Component {
             paddingTop: 35,
             paddingBottom: 65,
             paddingHorizontal: 35,
+            backgroundColor: 'rgb(28, 60, 64)',
+            color: 'rgb(255, 255, 255)'
           },
           title: {
-            fontSize: 24,
+            paddingTop: 2,
+            paddingBottom: 2,
+            margin: 15,
+            fontSize: 18,
             textAlign: 'center',
-            fontFamily: 'Oswald'
+            fontFamily: 'Roboto',
+            backgroundColor: 'rgb(255, 255, 255)',
+            color: 'rgb(28, 60, 64)'
           },
           author: {
             fontSize: 12,
@@ -30,19 +37,16 @@ class Reporte extends React.Component {
             marginBottom: 40,
           },
           subtitle: {
-            fontSize: 18,
-            margin: 12,
-            fontFamily: 'Oswald'
+            marginTop: 15,
+            marginBottom: 5,
+            fontSize: 16,
+            fontFamily: 'Roboto'
           },
           text: {
-            margin: 12,
-            fontSize: 14,
+            margin: 10,
+            fontSize: 12,
             textAlign: 'justify',
             fontFamily: 'Times-Roman'
-          },
-          image: {
-            marginTop: 0,
-            marginLeft: 400,
           },
           header: {
             fontSize: 12,
@@ -60,26 +64,43 @@ class Reporte extends React.Component {
             color: 'grey',
           },
           encabezado : {
-            margin: 8,
             marginLeft: 40,
-            fontSize: 18,
+            fontSize: 16,
             textAlign: 'justify',
             fontFamily: 'Times-Roman',
             fontWeight: 'bold'
           },
             dato: {
-            margin: 8,
-            fontSize: 16,
+            fontSize: 14,
             textAlign: 'justify',
             fontFamily: 'Times-Roman'
           },
           spool: {
+              paddingTop: 20,
+              paddingBottom: 20,
+              paddingHorizontal: 15,
               margin: 12,
               fontSize: 10,
               textAlign: 'justify',
               backgroundColor: 'rgb(13, 13, 13)',
               color: 'rgb(0, 107, 179)'
           },
+          table: {
+            width: '100%',
+          }, 
+          row: {
+            display: 'flex',
+            flexDirection: 'row',
+            borderTop: '1px solid #EEE',
+            borderBottom: '1px solid #EEE',
+            borderLeft: '1px solid #EEE',
+            borderRight: '1px solid #EEE',
+            paddingTop: 5,
+            paddingBottom: 5,
+            paddingLeft: 2,
+            paddingRight: 2,
+            marginHorizontal: 15,
+          },                        
         });
         
         return (
@@ -87,56 +108,58 @@ class Reporte extends React.Component {
             <Page style={styles.body}>
                       
             <Text style={styles.title}>Reporte de error</Text>
-                        
-            <Text style={styles.encabezado}>
-                Nombre del error    : 
-                <Text style={styles.dato}>
-                    {x['Nombre_Error']} 
+            <View style={styles.table}>
+
+                <Text style={ [styles.encabezado, styles.row ]}>
+                    Nombre del error    : 
+                    <Text style={styles.dato}>
+                        {x['Nombre_Error']} 
+                    </Text>
                 </Text>
-            </Text>
-            
-            <Text style={styles.encabezado}>
-                Tipo de error           : 
-                <Text style={styles.dato}>
-                    {x['Tipo_Error']} 
+                
+                <Text style={[styles.encabezado, styles.row ]}>
+                    Tipo de error           : 
+                    <Text style={styles.dato}>
+                        {x['Tipo_Error']} 
+                    </Text>
                 </Text>
-            </Text>
-            
-            <Text style={styles.encabezado}>
-                Código de retorno   : 
-                <Text style={styles.dato}>
-                    {x['Codigo_Retorno']} 
+                
+                <Text style={[styles.encabezado, styles.row ]}>
+                    Código de retorno   : 
+                    <Text style={styles.dato}>
+                        {x['Codigo_Retorno']} 
+                    </Text>
                 </Text>
-            </Text>
-            
-            <Text style={styles.encabezado}>
-                ID del error             : 
-                <Text style={styles.dato}>
-                    {x['ID_Mensaje_Error']} 
+                
+                <Text style={[styles.encabezado, styles.row ]}>
+                    ID del error             : 
+                    <Text style={styles.dato}>
+                        {x['ID_Mensaje_Error']} 
+                    </Text>
                 </Text>
-            </Text>
-            
-            <Text style={styles.encabezado}>
-                Complejidad           : 
-                <Text style={styles.dato}>
-                    {x['Complejidad']} 
+                
+                <Text style={[styles.encabezado, styles.row ]}>
+                    Complejidad           : 
+                    <Text style={styles.dato}>
+                        {x['Complejidad']} 
+                    </Text>
                 </Text>
-            </Text>
-            
-            <Text style={styles.encabezado}>
-                Reportado por         : 
-                <Text style={styles.dato}>
-                    {x['Reportado_Por']} 
+                
+                <Text style={[styles.encabezado, styles.row ]}>
+                    Reportado por         : 
+                    <Text style={styles.dato}>
+                        {x['Reportado_Por']} 
+                    </Text>
                 </Text>
-            </Text>
-            
-            <Text style={styles.encabezado}>
-                Fecha de reporte      : 
-                <Text style={styles.dato}>
-                    {x['Fecha']} 
+                
+                <Text style={[styles.encabezado, styles.row ]}>
+                    Fecha de reporte      : 
+                    <Text style={styles.dato}>
+                        {x['Fecha']} 
+                    </Text>
                 </Text>
-            </Text>
-            
+            </View>    
+
             <Text style={styles.subtitle}>Resultado Esperado:</Text>     
             <Text style={styles.text}>
                 {x['Resultado_Esperado']}
