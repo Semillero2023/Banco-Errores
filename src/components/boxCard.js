@@ -15,7 +15,8 @@ class BoxCard extends React.Component {
                             className="sneaaker-img"
                         />
         */}
-                        <h1 className="title">IB24242 - Nombre Descriptivo del Error</h1>
+                        <h1 className="title"> {errorObject['ID_Mensaje_Error']} - {errorObject['Nombre_Error']}</h1>
+
                         <h5><strong>Tipo de error        : </strong> {errorObject['Tipo_Error']}</h5>
                         <h5><strong>Codigo de retorno    : </strong> {errorObject['Codigo_Retorno']}</h5>
                         <h5><strong>Fecha del reporte    : </strong> {errorObject['Fecha']}</h5>
@@ -25,7 +26,7 @@ class BoxCard extends React.Component {
                         </ul>
                         <div className="button-box">
                             <button className="purchase" >
-                                Descripcion del Error
+                                Descripción del Error
                             </button>
                         </div>
                     </div>
