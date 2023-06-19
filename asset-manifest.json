@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/Banco-Errores/static/css/main.e9ce8719.css",
-    "main.js": "/Banco-Errores/static/js/main.e5d687c4.js",
+    "main.css": "/Banco-Errores/static/css/main.677b8266.css",
+    "main.js": "/Banco-Errores/static/js/main.1d9a3278.js",
     "static/media/FONDO.png": "/Banco-Errores/static/media/FONDO.8d70906968ff985186f5.png",
+    "static/media/LOADER.gif": "/Banco-Errores/static/media/LOADER.c8f6f6fccfbc6997e5ff.gif",
     "static/media/HK.gif": "/Banco-Errores/static/media/HK.11c36fe991c826cb8540.gif",
     "static/media/ROCAS.png": "/Banco-Errores/static/media/ROCAS.3beda9bfa9d291e057b1.png",
     "static/media/SUELO.png": "/Banco-Errores/static/media/SUELO.051bb0f95541a219e886.png",
     "index.html": "/Banco-Errores/index.html",
-    "main.e9ce8719.css.map": "/Banco-Errores/static/css/main.e9ce8719.css.map",
-    "main.e5d687c4.js.map": "/Banco-Errores/static/js/main.e5d687c4.js.map"
+    "main.677b8266.css.map": "/Banco-Errores/static/css/main.677b8266.css.map",
+    "main.1d9a3278.js.map": "/Banco-Errores/static/js/main.1d9a3278.js.map"
   },
   "entrypoints": [
-    "static/css/main.e9ce8719.css",
-    "static/js/main.e5d687c4.js"
+    "static/css/main.677b8266.css",
+    "static/js/main.1d9a3278.js"
   ]
 }
