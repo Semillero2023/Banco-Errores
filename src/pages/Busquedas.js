@@ -13,6 +13,7 @@ import { SlideNextButton } from "../components/BotonAvanzar"
 import { EffectCoverflow, Keyboard, Scrollbar, A11y } from "swiper";
 /*COSAS PARA SEPARAR LAS DOCUMENTACIONES EN PAGINACIONES */
 import ReactPaginate from "react-paginate";
+import swal from 'sweetalert';
 
 class Busquedas extends React.Component {
     state = {
@@ -100,6 +101,15 @@ class Busquedas extends React.Component {
         return response
     }
 
+    mostrarAlerta=()=>{
+        swal({
+            title: "Alerta",
+            text: "No hay resultados para la consulta",
+            icon: "warning",
+            button: "Aceptar"
+        })
+    }
+
     render() {
         if (this.state.loading) {
             return (
@@ -185,7 +195,7 @@ class Busquedas extends React.Component {
         const ContPag = Math.ceil(MatrizCarrousel.length);
         
         if (ContPag === 0 && this.state.consultaRealizada) {
-            console.log('No hubo resultados');
+            this.mostrarAlerta();
             return (
                 <OpcionesConsulta
                     handleClick={this.handleClick}
