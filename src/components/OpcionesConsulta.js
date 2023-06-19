@@ -62,6 +62,17 @@ class OpcionesConsulta extends React.Component {
                                         ID Mensaje Error
                                     </label>
 
+                                    <input
+                                        className="checkbox-tools" 
+                                        type="radio"
+                                        name="tools"
+                                        id="tool-5"
+                                        value="Nombre"
+                                    />
+                                    <label className="for-checkbox-tools" htmlFor="tool-5">
+                                        <i className="uil uil-crop-alt" />
+                                        Reportado Por
+                                    </label>
                                     </fieldset>
                                 </div>
                             </div>

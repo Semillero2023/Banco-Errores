@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from 'react-bootstrap';
 import OpcionesConsulta from "../components/OpcionesConsulta";
 import Loading from "../components/Loading";
-import { searchMessageID, searchReturnCode } from "../querys/searchErrors";
+import { searchMessageID, searchReturnCode, searchReportadoPor } from "../querys/searchErrors";
 import BoxCard from "../components/boxCard";
 import styles from "../components/styles/Documentacion.module.css";
 /* COSAS PARA LA LIBRERIA DEL SCROLLBAR */
@@ -50,6 +50,22 @@ class Busquedas extends React.Component {
                             })
                             break;
 
+                        case "Nombre":
+                            const responseName = await this.getErrorsByName(filter);
+                            let errores = [];
+                            responseName.forEach((Doc) => {
+                                if(!Doc.data().Reportado_Por.startsWith(filter)){
+                                    return
+                                }
+                                errores.push(Doc)
+                            })
+                            this.setState({
+                                errores: errores,
+                                loading: false
+                                
+                            })
+                            break;
+
                         default:
                             //RC, FS, AB
                             const responseCode = await this.getErrorsByReturnCode(radio.value, filter);
@@ -79,6 +95,11 @@ class Busquedas extends React.Component {
         return response
     }
 
+    getErrorsByName = async (filter) => {
+        const response = await searchReportadoPor(filter);
+        return response
+    }
+
     render() {
         if (this.state.loading) {
             return (
@@ -91,7 +112,7 @@ class Busquedas extends React.Component {
             );
         }
 
-        if (this.state.errores.length === 0) {
+        if (!this.state.consultaRealizada) {
             return (
                 <OpcionesConsulta
                     handleClick={this.handleClick}
