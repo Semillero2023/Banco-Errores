@@ -9,6 +9,9 @@ import Busquedas from "./pages/Busquedas";
 // import components
 import Navbar from "./components/Navbar";
 import FondoInicio from "./components/FondoInicio";
+// Bootstrap CSS
+import "bootstrap/dist/css/bootstrap.min.css";
+
 function App() {
 
   return (

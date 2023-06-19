@@ -4,7 +4,8 @@ class CargaMasiva extends React.Component {
     render(){
 
         return(
-            <></>
+            <>
+            </>
         );
     }
 }
