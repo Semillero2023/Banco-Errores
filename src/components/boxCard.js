@@ -1,4 +1,5 @@
 import React from "react";
+import ErrorEmergente from "./ErrorEmergente";
 import "./styles/boxCard.css";
 
 class BoxCard extends React.Component {
@@ -6,8 +7,8 @@ class BoxCard extends React.Component {
         const { errorObject, docID } = this.props;
         return (
             <>
-                    <div key={docID} className="card">
-                        {/*
+                <div key={docID} className="card">
+                    {/*
                         <img class="card-img-top"
                             ref={imgRef}
                             src={require("./media/COBOL.png")}
@@ -15,21 +16,19 @@ class BoxCard extends React.Component {
                             className="sneaaker-img"
                         />
         */}
-                        <h1 className="title"> {errorObject['ID_Mensaje_Error']} - {errorObject['Nombre_Error']}</h1>
+                    <h1 className="title"> {errorObject['ID_Mensaje_Error']} - {errorObject['Nombre_Error']}</h1>
 
-                        <h5><strong>Tipo de error        : </strong> {errorObject['Tipo_Error']}</h5>
-                        <h5><strong>Codigo de retorno    : </strong> {errorObject['Codigo_Retorno']}</h5>
-                        <h5><strong>Fecha del reporte    : </strong> {errorObject['Fecha']}</h5>
-                        <h5><strong>Reportado por        : </strong> {errorObject['Reportado_Por']}</h5>
-                        <ul className="sizes-box">
-                            <li>Complejidad: {errorObject['Complejidad']}</li>
-                        </ul>
-                        <div className="button-box">
-                            <button className="purchase" >
-                                Descripción del Error
-                            </button>
-                        </div>
-                    </div>
+                    <h5><strong>Tipo de error        : </strong> {errorObject['Tipo_Error']}</h5>
+                    <h5><strong>Codigo de retorno    : </strong> {errorObject['Codigo_Retorno']}</h5>
+                    <h5><strong>Fecha del reporte    : </strong> {errorObject['Fecha']}</h5>
+                    <h5><strong>Reportado por        : </strong> {errorObject['Reportado_Por']}</h5>
+                    <ul className="sizes-box">
+                        <li>Complejidad: {errorObject['Complejidad']}</li>
+                    </ul>
+                    <ErrorEmergente
+                        errorObject={errorObject}
+                    />
+                </div>
             </>
         );
     }

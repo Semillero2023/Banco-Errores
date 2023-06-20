@@ -1,184 +1,202 @@
-main{
-    background-color: #28282877;
-    z-index: -1;
-    width: 200%;
-    height: 200vh;
-    position:fixed;
-    overflow: hidden;
-    margin: 0;
-    transform: translateY(-30vh);
-    backdrop-filter: blur(5px);
+.overlay-main {
+  background-color: #1e2fb2;
+  z-index: -4;
+  width: 0;
+  height: 0;
+  position: fixed;
+  overflow: hidden;
+  margin: 0;
+  transform: translateY(-30vh);
 }
 
-.Text{
-    color: #e3e3e3;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: calc(3em + 0.5vh);
-    margin-bottom: 0;
-    margin-top: 0;
+.Text {
+  color: #e3e3e3;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: calc(3em + 0.5vh);
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
-.Tarjeta{
-    position: relative;
-    background: -webkit-linear-gradient(bottom left, rgba(202, 204, 205, 0.319), rgba(197, 240, 253, 0.348), rgba(5, 13, 86, 0.114));
-    backdrop-filter: blur(20px);
-    padding: 0;
-    width: 50%;
-    height: 50vh;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    border: 1px solid #fff;
-    outline: none;
-    border-radius: 30px;
-    font-size: 1%;
-    color:#fff;
-    font-weight: 500;
-    margin-left: 20px;
-    transition: 0.5s;
-    justify-content: center;
-    margin: 0 auto;
-    margin-bottom: 5vh;
-    margin-top: 2vh;
-    overflow: hidden;
+.Tarjeta {
+  position: relative;
+  background: -webkit-linear-gradient(
+    bottom left,
+    rgba(202, 204, 205, 0.319),
+    rgba(197, 240, 253, 0.348),
+    rgba(5, 13, 86, 0.114)
+  );
+  backdrop-filter: blur(20px);
+  padding: 0;
+  width: 50%;
+  height: 50vh;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  border: 1px solid #fff;
+  outline: none;
+  border-radius: 30px;
+  font-size: 1%;
+  color: #fff;
+  font-weight: 500;
+  margin-left: 20px;
+  transition: 0.5s;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 5vh;
+  margin-top: 2vh;
+  overflow: hidden;
 }
 
 .Tarjeta:hover {
-    cursor: pointer;
-    color:#fff;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    backdrop-filter: blur(50px);
-    transform: scale(1.05);
-    margin-top: 3%;
-    transition: 0.5s;
+  cursor: pointer;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  backdrop-filter: blur(50px);
+  transform: scale(1.05);
+  margin-top: 3%;
+  transition: 0.5s;
 }
 
 .Tarjeta_Nivel_1:hover {
-    background: -webkit-linear-gradient(bottom left, rgba(70, 242, 202, 0.319), rgba(70, 242, 196, 0.383), rgba(69, 246, 187, 0.383));
-    box-shadow: 0 0 0.25vw #03f4c0,
-    0 0 0.5vw #77edd0d8,
-    0 0 1vw #c6e7f17b;
+  background: -webkit-linear-gradient(
+    bottom left,
+    rgba(70, 242, 202, 0.319),
+    rgba(70, 242, 196, 0.383),
+    rgba(69, 246, 187, 0.383)
+  );
+  box-shadow: 0 0 0.25vw #03f4c0, 0 0 0.5vw #77edd0d8, 0 0 1vw #c6e7f17b;
 }
 
 .Tarjeta_Nivel_2:hover {
-    background: -webkit-linear-gradient(bottom left, rgba(70, 242, 87, 0.319), rgba(95, 243, 100, 0.254), rgba(154, 230, 100, 0.232));
-    box-shadow: 0 0 0.25vw #5bdd88,
-    0 0 0.5vw #71d69bd8,
-    0 0 1vw #d5f9ef7b;
+  background: -webkit-linear-gradient(
+    bottom left,
+    rgba(70, 242, 87, 0.319),
+    rgba(95, 243, 100, 0.254),
+    rgba(154, 230, 100, 0.232)
+  );
+  box-shadow: 0 0 0.25vw #5bdd88, 0 0 0.5vw #71d69bd8, 0 0 1vw #d5f9ef7b;
 }
 
 .Tarjeta_Nivel_3:hover {
-    background: -webkit-linear-gradient(bottom left, rgba(252, 255, 95, 0.794), rgba(235, 227, 75, 0.435), rgba(255, 251, 43, 0.292));
-    box-shadow: 0 0 0.25vw #e6fc68,
-    0 0 0.5vw #fff78ea5,
-    0 0 1vw #fefadf7b;
+  background: -webkit-linear-gradient(
+    bottom left,
+    rgba(252, 255, 95, 0.794),
+    rgba(235, 227, 75, 0.435),
+    rgba(255, 251, 43, 0.292)
+  );
+  box-shadow: 0 0 0.25vw #e6fc68, 0 0 0.5vw #fff78ea5, 0 0 1vw #fefadf7b;
 }
 
 .Tarjeta_Nivel_4:hover {
-    background: -webkit-linear-gradient(bottom left, rgba(255, 157, 52, 0.883), rgba(203, 155, 104, 0.718), rgba(246, 204, 159, 0.569));
-    box-shadow: 0 0 0.25vw #e6ac48,
-    0 0 0.5vw #f7d986d8,
-    0 0 1vw #fff5e77b;
+  background: -webkit-linear-gradient(
+    bottom left,
+    rgba(255, 157, 52, 0.883),
+    rgba(203, 155, 104, 0.718),
+    rgba(246, 204, 159, 0.569)
+  );
+  box-shadow: 0 0 0.25vw #e6ac48, 0 0 0.5vw #f7d986d8, 0 0 1vw #fff5e77b;
 }
 
 .Tarjeta_Nivel_5:hover {
-    background: -webkit-linear-gradient(bottom left, rgba(144, 25, 25, 0.806), rgba(200, 58, 69, 0.475), rgba(187, 35, 63, 0.258));
-    box-shadow: 0 0 0.25vw #b4324a,
-    0 0 0.5vw #ed7777d8,
-    0 0 1vw #f1c6c67b;
+  background: -webkit-linear-gradient(
+    bottom left,
+    rgba(144, 25, 25, 0.806),
+    rgba(200, 58, 69, 0.475),
+    rgba(187, 35, 63, 0.258)
+  );
+  box-shadow: 0 0 0.25vw #b4324a, 0 0 0.5vw #ed7777d8, 0 0 1vw #f1c6c67b;
 }
 
 .Nivel_1 {
-    border: solid 3px  rgb(58, 242, 138);
+  border: solid 3px rgb(58, 242, 138);
 }
 
 .Nivel_2 {
-    border: solid 3px  rgb(66, 215, 25);
+  border: solid 3px rgb(66, 215, 25);
 }
 
 .Nivel_3 {
-    border: solid 3px  rgb(249, 220, 54);
+  border: solid 3px rgb(249, 220, 54);
 }
 
 .Nivel_4 {
-    border: solid 3px  rgb(235, 123, 43);
+  border: solid 3px rgb(235, 123, 43);
 }
 
 .Nivel_5 {
-    border:  solid 3px rgb(138, 28, 28);
+  border: solid 3px rgb(138, 28, 28);
 }
 
 .TextoTarjeta {
-    height: 100%;
-    overflow: hidden;
+  height: 100%;
+  overflow: hidden;
 }
 
 .TarjetaEncabezado {
-    background-color: #ffffff18;
-    color: #f1f1f1;
-    font-family: 'Poppins', sans-serif;
-    border-bottom: 1.5px solid #fff;
-    border-top-right-radius: 7px;
-    border-top-left-radius: 7px;
-    height: 5vh;
-    overflow: hidden;
-    font-size: calc(30em + 2vh) ;
+  background-color: #ffffff18;
+  color: #f1f1f1;
+  font-family: "Poppins", sans-serif;
+  border-bottom: 1.5px solid #fff;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  height: 5vh;
+  overflow: hidden;
+  font-size: calc(30em + 2vh);
 }
 
 .TextoEncabezado {
-    position: relative;
-    margin-left: 10px;
-    align-items: center;
-    top: 5px;
+  position: relative;
+  margin-left: 10px;
+  align-items: center;
+  top: 5px;
 }
 
 .Subtitulo {
-    font-size: calc(45em + 1.5vh) ;
-    margin: 10px;
-    margin-top: 10px;
+  font-size: calc(45em + 1.5vh);
+  margin: 10px;
+  margin-top: 10px;
 }
 
 .Texto {
-    font-size: calc(35em + 1.5vh) ;
-    margin: 10px;
-    margin-top: 10px;
+  font-size: calc(35em + 1.5vh);
+  margin: 10px;
+  margin-top: 10px;
 }
 
-
 /* VALORACION DE DIFICULTAD */
-.CajonValoracion { 
-    position: relative;
-    margin-top: 10px;
-    margin-right: 20px;
-    backdrop-filter: blur(20px);
-    width: 90px;
-    height: 90px;
-    box-sizing: border-box;
-    border-radius: 50%;
-    font-family: 'Poppins', sans-serif;
-    color:#fff;
-    transition: 0.5s;
-    justify-content: center;  
-    float: right;
+.CajonValoracion {
+  position: relative;
+  margin-top: 10px;
+  margin-right: 20px;
+  backdrop-filter: blur(20px);
+  width: 90px;
+  height: 90px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  transition: 0.5s;
+  justify-content: center;
+  float: right;
 }
 
 .DificultadRotulo {
-    position: relative;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    margin-top: 15px;
-    font-size: 12px;
+  position: relative;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-top: 15px;
+  font-size: 12px;
 }
 
 .Dificultad {
-    position: relative;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    font-size: calc(90em + 1.5vh) ;
-    margin-top: 0px;
+  position: relative;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-size: calc(90em + 1.5vh);
+  margin-top: 0px;
 }
 
 /*
@@ -188,93 +206,134 @@ main{
 --------------------------------------------
 */
 .TarjetaExpandida {
-    position: relative;
-    background: #dee1ee2f;
-    backdrop-filter: blur(20px);
-    padding: 0;
-    width: 70%;
-    height: 500px;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    border: 1px solid #fff;
-    outline: none;
-    border-radius: 7px;
-    color:#fff;
-    font-weight: 500;
-    margin-left: 20px;
-    transition: 0.5s;
-    justify-content: center;
-    margin: 0 auto;
-    margin-top: 25px;
-    margin-bottom: 15px;
-    overflow: hidden;
+  position: relative;
+  background: #dee1ee2f;
+  backdrop-filter: blur(20px);
+  padding: 0;
+  width: 70%;
+  height: 500px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  border: 1px solid #fff;
+  outline: none;
+  border-radius: 7px;
+  color: #fff;
+  font-weight: 500;
+  margin-left: 20px;
+  transition: 0.5s;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  overflow: hidden;
 }
 .TarjetaExpandida:hover {
-    cursor: pointer;
-    background: #ededed;
-    border: 2px solid #ffffffa2;
-    border-radius: 20px;
-    backdrop-filter: blur(50px);
-    width: 75%;
-    height: 550px;
-    color: #282828;
+  cursor: pointer;
+  background: #ededed;
+  border: 2px solid #ffffffa2;
+  border-radius: 20px;
+  backdrop-filter: blur(50px);
+  width: 75%;
+  height: 550px;
+  color: #282828;
 }
 .TextoTarjetaExpandida {
-    height: 500px;
-    overflow: hidden;
+  height: 500px;
+  overflow: hidden;
 }
 .TextoTarjetaExpandida:hover {
-    overflow: scroll;
+  overflow: scroll;
 }
 
 .TarjetaExpandidaEncabezado {
-    background: -webkit-linear-gradient(bottom left, rgba(72, 117, 193, 0.83), rgba(28, 52, 172, 0.658), rgba(15, 25, 90, 0.795));
-    color: #e3e3e3;
-    font-family: 'Poppins', sans-serif;
-    font-size: calc(50em + 1.5vh) ;
-    border-bottom: 1.5px solid #fff;
-    border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
-    height: 50px;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  background: -webkit-linear-gradient(
+    bottom left,
+    rgba(72, 117, 193, 0.83),
+    rgba(28, 52, 172, 0.658),
+    rgba(15, 25, 90, 0.795)
+  );
+  color: #e3e3e3;
+  font-family: "Poppins", sans-serif;
+  font-size: calc(50em + 1.5vh);
+  border-bottom: 1.5px solid #fff;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .TextoEncabezadoExpandido {
-    position: relative;
-    margin: 0 auto;
-    align-items: center;
-    justify-self: center;
-    top: 5px;
+  position: relative;
+  margin: 0 auto;
+  align-items: center;
+  justify-self: center;
+  top: 5px;
 }
 
 .spool {
-    background-color: rgb(27, 27, 27);
-    border-radius: 10px;
-    color: rgb(73, 101, 194);
-    font-family: Consolas, monospace;
-    font-size: 17px;
-} 
-
-/* BOTONES DE PAGINACION */
-.pagbutton{
-    height: 1vh;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    color: #ededed;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0%;
-    margin-top: 0%;
+  background-color: rgb(27, 27, 27);
+  border-radius: 10px;
+  color: rgb(73, 101, 194);
+  font-family: Consolas, monospace;
+  font-size: 17px;
 }
 
-.pagbutton a{
-    padding: 10px;
-    margin: 8px;
-    border-radius: 5px;
-    border: 1px solid  #dbf1ff;
-    color: #dbf1ff;
-    cursor: pointer;
+/* BOTONES DE PAGINACION */
+.pagbutton {
+  height: 1vh;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  color: #ededed;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0%;
+  margin-top: 0%;
+}
+
+.pagbutton a {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 1px solid #dbf1ff;
+  color: #dbf1ff;
+  cursor: pointer;
+}
+
+/*
+--------------------------------------------
+    BOTON DE REPORTE
+--------------------------------------------
+*/
+.generdadorPDF {
+  width: 15%;
+  height: auto;
+  background-color: #282828;
+  color: #dbf1ff;
+  border: 1px solid #dbf1ff;
+  padding: 10px;
+  margin: 0%;
+  border-radius: 5%;
+}
+
+.generdadorPDF:hover {
+  width: 17%;
+  height: auto;
+  background-color: #38383861;
+  color: #dbf1ff;
+  border: 2px solid #dbf1ff;
+  padding: 10px;
+  margin: 0%;
+  border-radius: 5%;
+}
+
+.fondoPDF {
+  background-color: #28282800;
+  border: 0px solid #dbf1ff00;
+}
+.fondoPDF:hover {
+  background-color: #28282800;
+  border: 0px solid #dbf1ff00;
 }
