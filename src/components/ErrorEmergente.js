@@ -21,13 +21,13 @@ export default function ErrorEmergente(props) {
 
   return (
     <>
-    <div className="button-box">
-        <MDBBtn
-            className="purchase"
+    <div>
+        <button
+          className="primaryBtn"
             onClick={() => setScrollableModal(!scrollableModal)}
         >
         Descripción del Error
-      </MDBBtn>
+      </button>
     </div> 
         {/* <button className="purchase" onClick={() => setScrollableModal(!scrollableModal)}>
             Descripción del Error
@@ -45,14 +45,14 @@ export default function ErrorEmergente(props) {
         tabInde="-1"
       >
         <MDBModalDialog size="lg" scrollable>
-          <MDBModalContent>
-            <MDBModalHeader>
-              <MDBModalTitle>Modal title</MDBModalTitle>
-              <MDBBtn
+          <MDBModalContent className="darkBG">
+            <MDBModalHeader className='modalHeader'>
+              <MDBModalTitle
+                className='heading' >Modal title</MDBModalTitle>
+              <button
                 className="btn-close"
-                color="none"
                 onClick={() => setScrollableModal(!scrollableModal)}
-              ></MDBBtn>
+              ></button>
             </MDBModalHeader>
             <MDBModalBody>
               <Container>
@@ -141,10 +141,10 @@ export default function ErrorEmergente(props) {
               </Container>
             </MDBModalBody>
             <MDBModalFooter>
-              <MDBBtn color='secondary' onClick={() => setScrollableModal(!setScrollableModal)}>
+              <button className='closeBtn' onClick={() => setScrollableModal(!setScrollableModal)}>
                 Regresar
-              </MDBBtn>
-              <Button  variant="link">
+              </button>
+              <button variant="link" className='downloadBtn'>
                     <PDFDownloadLink 
                         document={
                             <Reporte
@@ -156,7 +156,7 @@ export default function ErrorEmergente(props) {
                     >  
                     {({ blob, url, loading, error }) => (loading ? 'Preparando PDF' : 'Descargar PDF')}
                     </PDFDownloadLink>
-                </Button>
+                </button>
               {/* <MDBBtn
                 color="secondary"
                 onClick={() => setScrollableModal(!setScrollableModal)}
