@@ -75,14 +75,14 @@ class Documentacion extends React.Component {
                         errorObject={doc.data()}
                         docID={doc.id}
                     />
-                    {/*<Tarjeta
-                    key = {doc.id}
-                    x = {doc.data()}
-                    docID = {doc.id}
-            />*/}
                 </SwiperSlide>
             )
         })
+        {/*<Tarjeta
+        key = {doc.id}
+        x = {doc.data()}
+        docID = {doc.id}
+        />*/}
 
 
         const ItemsPorPag = 5;
@@ -135,6 +135,7 @@ class Documentacion extends React.Component {
         //La matriz d carrouseles se retorna como un solo corrosuel vertical
         return (
             <>
+                <main className={styles.overlayMain}></main>
                 <h1 className="mt-2 mb-4" style={{ textAlign: "center", color: "white" }}>Repositorio de errores</h1>
                 <Container >
                     {MatrizCarrousel[this.state.PageNumber]}

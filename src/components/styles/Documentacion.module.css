@@ -1,4 +1,14 @@
-
+.overlayMain {
+  background-color: #28282877;
+  z-index: -1;
+  width: 200%;
+  height: 200vh;
+  position:fixed;
+  overflow: hidden;
+  margin: 0;
+  transform: translateY(-30vh);
+  backdrop-filter: blur(5px);
+}
 
 
 .Tarjeta:hover {

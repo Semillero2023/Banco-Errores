@@ -160,6 +160,7 @@ class Formulario extends React.Component {
   render() {
     return (
       <>
+        <main className={styles.overlayMain}></main>
         <h1 className="display-4 mt-4 mb-4" style={{ textAlign: "center", color: "white" }}>Añadir nuevo error</h1>
         <Container className="mb-4 mt-4">
           <Row>

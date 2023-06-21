@@ -1,3 +1,11 @@
+.popup-dialog {
+  position: absolute;
+  overflow: visible;
+  top: -50px !important;
+  /* transform: translateY(-50px); */
+  height: 75vh !important;
+}
+
 
 .darkBG {
   background-color: rgba(0, 0, 0, 0.347);

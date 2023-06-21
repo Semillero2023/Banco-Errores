@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import {  Col, Container,  Row, Table } from 'react-bootstrap';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import Reporte from './Reporte';
-import { Button } from 'react-bootstrap';
+// import { Button } from 'react-bootstrap';
 import './styles/ErrorEmergente.css';
 import {
-  MDBBtn,
+  // MDBBtn,
   MDBModal,
   MDBModalDialog,
   MDBModalContent,
@@ -21,14 +21,14 @@ export default function ErrorEmergente(props) {
 
   return (
     <>
-    <div>
-        <button
-          className="primaryBtn"
-            onClick={() => setScrollableModal(!scrollableModal)}
-        >
-        Descripción del Error
-      </button>
-    </div> 
+      <div>
+          <button
+            className="primaryBtn"
+              onClick={() => setScrollableModal(!scrollableModal)}
+          >
+          Descripción del Error
+        </button>
+      </div> 
         {/* <button className="purchase" onClick={() => setScrollableModal(!scrollableModal)}>
             Descripción del Error
         </button>    */}
@@ -39,16 +39,17 @@ export default function ErrorEmergente(props) {
       </MDBBtn> */}
 
       <MDBModal
-        className="centered"
         show={scrollableModal}
         setShow={setScrollableModal}
         tabInde="-1"
+        nonInvasive={true}
+        className='popup-dialog'
       >
-        <MDBModalDialog size="lg" scrollable>
+        <MDBModalDialog size='lg' scrollable centered>
           <MDBModalContent className="darkBG">
             <MDBModalHeader className='modalHeader'>
               <MDBModalTitle
-                className='heading' >Modal title</MDBModalTitle>
+                className='heading' >Detalle del Error</MDBModalTitle>
               <button
                 className="btn-close"
                 onClick={() => setScrollableModal(!scrollableModal)}
