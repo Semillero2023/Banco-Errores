@@ -179,7 +179,7 @@ class Busquedas extends React.Component {
                             slideShadows: false,
                         }}
                         modules={[EffectCoverflow, Keyboard, Scrollbar, A11y]}
-                        className="mySwiper"
+                        className={styles.swiperOverflow}
                     >
                         <Container>
                             {x}
@@ -208,7 +208,7 @@ class Busquedas extends React.Component {
                 <OpcionesConsulta
                     handleClick={this.handleClick}
                 />
-                <Container >
+                <Container  className="requires-no-scroll">
                     {MatrizCarrousel[this.state.PageNumber]}
                     <ReactPaginate
                         previousLabel={"Ant. Pag."}
