@@ -43,9 +43,9 @@ export default function ErrorEmergente(props) {
         setShow={setScrollableModal}
         tabInde="-1"
         nonInvasive={true}
-        className='popup-dialog'
+        className='popup-modal'
       >
-        <MDBModalDialog size='lg' scrollable centered>
+        <MDBModalDialog className='popup-dialog' size='lg' scrollable centered>
           <MDBModalContent className="darkBG">
             <MDBModalHeader className='modalHeader'>
               <MDBModalTitle
@@ -55,7 +55,7 @@ export default function ErrorEmergente(props) {
                 onClick={() => setScrollableModal(!scrollableModal)}
               ></button>
             </MDBModalHeader>
-            <MDBModalBody>
+            <MDBModalBody className="popup-body">
               <Container>
                 <Row>
                   <Col md={1}></Col>

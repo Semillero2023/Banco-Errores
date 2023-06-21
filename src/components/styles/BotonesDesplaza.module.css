@@ -1,8 +1,10 @@
 .Boton {
+    position: relative;
     width: 7.5vh;
     height: 7.5vh;
-    position: relative;
-    margin-bottom: 5%;
+    margin-top: 7vh;
+    margin-bottom: 0%;
+    top: -5vh;
     bottom: 0%;
     left: 50%;
     background-color: rgba(170, 232, 241, 0.232);
@@ -13,11 +15,11 @@
 }
 
 .sig{
-    transform: translateX(200%);
+    transform: translateX(350%);
 }
 
 .ant{
-    transform: translateX(-300%);
+    transform: translateX(-450%);
 }
 
 .Boton:hover{

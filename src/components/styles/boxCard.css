@@ -8,8 +8,6 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   justify-content: center;
   margin: 0 auto;
-  margin-bottom: 5vh;
-  margin-top: 2vh;
   overflow: hidden;
   align-items: center;
   background: linear-gradient(
@@ -25,6 +23,9 @@
 
 .title{
   width: 100%;
+  height: 2.5em;
+  overflow: hidden;
+  margin-bottom: 0.5em;
   color: rgb(220, 220, 220);
 }
 

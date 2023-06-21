@@ -1,24 +1,36 @@
-.popup-dialog {
+ .popup-modal {
   position: absolute;
-  overflow: visible;
-  top: -50px !important;
-  /* transform: translateY(-50px); */
-  height: 75vh !important;
+  transform: translateY(-20vh); 
+  height: 95vh !important;
+  z-index: 99 !important;
 }
 
+body:has(.requires-no-scroll) {
+  overflow-x: hidden;
+} 
+
+.popup-dialog {
+  box-shadow: 0 0 10px #cff2fc, 0 0 40px #d4eef6ad;
+}
+
+.popup-modal h5,
+.popup-modal th {
+  color: white !important;
+}
+
+.popup-modal td,
+.popup-modal p {
+  color: white !important;
+}
 
 .darkBG {
-  background-color: rgba(0, 0, 0, 0.347);
   z-index: 0;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
-  background: linear-gradient(
-    26deg,
-    rgba(6, 114, 114, 0.644) 30%,
-    rgba(19, 19, 121, 0.600) 70% 
-  ); 
+  background: rgb(31,31,31);
+  background: linear-gradient(336deg, rgba(31,31,31,0.8995973389355743) 3%, rgba(9,9,9,0.9108018207282913) 38%, rgba(32,32,32,0.9332107843137255) 100%);
 }
 
 .modalHeader {

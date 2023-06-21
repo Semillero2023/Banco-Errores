@@ -78,11 +78,6 @@ class Documentacion extends React.Component {
                 </SwiperSlide>
             )
         })
-        {/*<Tarjeta
-        key = {doc.id}
-        x = {doc.data()}
-        docID = {doc.id}
-        />*/}
 
 
         const ItemsPorPag = 5;
@@ -110,13 +105,13 @@ class Documentacion extends React.Component {
                         slidesPerView={"auto"}
                         coverflowEffect={{
                             rotate: 0,
-                            stretch: 0,
+                            stretch: 50,
                             depth: 500,
                             modifier: 4,
                             slideShadows: false,
                         }}
                         modules={[EffectCoverflow, Keyboard, Scrollbar, A11y]}
-                        className="mySwiper"
+                        className={styles.swiperOverflow}
                     >
                         <Container>
                             {x}
@@ -137,7 +132,7 @@ class Documentacion extends React.Component {
             <>
                 <main className={styles.overlayMain}></main>
                 <h1 className="mt-2 mb-4" style={{ textAlign: "center", color: "white" }}>Repositorio de errores</h1>
-                <Container >
+                <Container className="requires-no-scroll">
                     {MatrizCarrousel[this.state.PageNumber]}
                     <ReactPaginate
                         previousLabel={"Ant. Pag."}

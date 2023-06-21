@@ -10,6 +10,10 @@
   backdrop-filter: blur(5px);
 }
 
+.swiperOverflow {
+  overflow: visible !important;
+}
+
 
 .Tarjeta:hover {
   cursor: pointer;
@@ -90,6 +94,7 @@
   margin-right: auto;
   margin-bottom: 0%;
   margin-top: 0%;
+  padding-bottom: 5vh;
 }
 
 .pagbutton a {
