@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {  faHome, faBookOpen, faCloudUpload, faUpload, faMagnifyingGlassChart } from "@fortawesome/free-solid-svg-icons";
+import {  faHome, faBookOpen, faCloudUpload, faMagnifyingGlassChart } from "@fortawesome/free-solid-svg-icons";
 import { Navbar, Nav, Container } from "react-bootstrap";
 //Importar el navbar
 import "./styles/Nav-bar.module.css"
@@ -14,7 +14,7 @@ class NavbarComponent extends React.Component {
     return (
       <Navbar expand="lg">
       <Container>
-        <h3 style={{color: "white", marginRight: "75px"}}>Banco de errores</h3>
+        <h3 style={{color: "white", marginRight: "4vw"}}>Banco de errores</h3>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
         <Nav>
@@ -26,9 +26,6 @@ class NavbarComponent extends React.Component {
             </Link>
             <Link to="/Formulario">
               <FontAwesomeIcon icon={faCloudUpload} /> Añadir error
-            </Link>
-            <Link to="/CargaMasiva">
-              <FontAwesomeIcon icon={faUpload} /> Carga Masiva de errores
             </Link>
             <Link to="/Busquedas">
               <FontAwesomeIcon icon={faMagnifyingGlassChart} /> Búsqueda de errores

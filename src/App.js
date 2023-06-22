@@ -4,7 +4,6 @@ import './index.css'
 import Home from "./pages/Home";
 import Documentacion from "./pages/Documentacion";
 import Formulario from "./pages/Formulario";
-import CargaMasiva from "./pages/CargaMasiva";
 import Busquedas from "./pages/Busquedas";
 // import components
 import Navbar from "./components/Navbar";
@@ -21,7 +20,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Documentacion" element={<Documentacion />} />
         <Route path="/Formulario" element={<Formulario />} />
-        <Route path="/CargaMasiva" element={<CargaMasiva />} />
         <Route path="/Busquedas" element={<Busquedas />} />
       </Routes>
       <FondoInicio/>
