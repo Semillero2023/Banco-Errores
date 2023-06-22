@@ -87,9 +87,7 @@ class OpcionesConsulta extends React.Component {
                                     <input id="search" type="text" placeholder="Inserte su consulta" />
                                 </div>
                                 <div className="input-field third-wrap">
-                                    <button className="btn-search" type="button" onClick={handleClick}>
-                                        Buscar
-                                    </button>
+                                    <input className="btn-search" type="submit" onClick={handleClick} value="Buscar"/>
                                 </div>
                             </div>
                         </form>

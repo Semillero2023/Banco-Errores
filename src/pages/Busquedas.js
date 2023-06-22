@@ -31,7 +31,8 @@ class Busquedas extends React.Component {
         })
     }
 
-    handleClick = () => {
+    handleClick = (e) => {
+        e.preventDefault();
         try {
             this.setState({
                 loading: true,
@@ -114,6 +115,7 @@ class Busquedas extends React.Component {
         if (this.state.loading) {
             return (
                 <>
+                    <main className={styles.overlayMain}></main>
                     <OpcionesConsulta
                         handleClick={this.handleClick}
                     />
@@ -124,16 +126,19 @@ class Busquedas extends React.Component {
 
         if (!this.state.consultaRealizada) {
             return (
+                <>
+                <main className={styles.overlayMain}></main>
                 <OpcionesConsulta
                     handleClick={this.handleClick}
                 />
+                </>
             );
         }
 
         const documents = [];
         this.state.errores.forEach((doc) => {
             documents.push(
-                <SwiperSlide>
+                <SwiperSlide key={doc.id}>
                     <BoxCard
                         key={doc.id}
                         errorObject={doc.data()}
@@ -197,14 +202,18 @@ class Busquedas extends React.Component {
         if (ContPag === 0 && this.state.consultaRealizada) {
             this.mostrarAlerta();
             return (
+                <>
+                <main className={styles.overlayMain}></main>
                 <OpcionesConsulta
                     handleClick={this.handleClick}
                 />
+                </>
             );
         }
 
         return (
             <>
+                <main className={styles.overlayMain}></main>
                 <OpcionesConsulta
                     handleClick={this.handleClick}
                 />
