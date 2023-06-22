@@ -15,9 +15,40 @@ import {
   MDBModalFooter,
 } from 'mdb-react-ui-kit';
 
+const isValidUrl = (urlString) => {
+  try { 
+    return Boolean(new URL(urlString)); 
+  } catch(e){ 
+    return false; 
+  }
+}
+
 export default function ErrorEmergente(props) {
   const [scrollableModal, setScrollableModal] = useState(false);
   const errorObject = props.errorObject;
+  const fuentes = errorObject["Fuentes"].split(',');
+  var tipoError = "";
+  switch(errorObject['Tipo_Error']){
+      case 'AB':
+          tipoError = 'Abend'
+          break;
+      case 'FS':
+          tipoError = 'File Status'
+          break;
+      case 'RC':
+          tipoError = 'Return Code'
+          break;
+      default:
+          tipoError = ''
+          break;
+  }
+  var fechaError = errorObject['Fecha'].split("-");
+  var fechaErrorNueva = "";
+  if (parseInt(fechaError[0]) >= 2000) {
+      fechaErrorNueva = fechaError[2] + '/' + fechaError[1] + '/' + fechaError[0];
+  } else {
+      fechaErrorNueva = fechaError[0] + '/' + fechaError[1] + '/' + fechaError[2];
+  }
 
   return (
     <>
@@ -28,20 +59,12 @@ export default function ErrorEmergente(props) {
           >
           Descripción del Error
         </button>
-      </div> 
-        {/* <button className="purchase" onClick={() => setScrollableModal(!scrollableModal)}>
-            Descripción del Error
-        </button>    */}
-      {/* <MDBBtn
-        onClick={() => setScrollableModal(!scrollableModal)}
-      >
-        LAUNCH DEMO MODAL
-      </MDBBtn> */}
+      </div>
 
       <MDBModal
         show={scrollableModal}
         setShow={setScrollableModal}
-        tabInde="-1"
+        tabinde="-1"
         nonInvasive={true}
         className='popup-modal'
       >
@@ -68,7 +91,7 @@ export default function ErrorEmergente(props) {
                         </tr>
                         <tr>
                           <th>Tipo del error</th>
-                          <td>{errorObject["Tipo_Error"]}</td>
+                          <td>{tipoError} ({errorObject['Tipo_Error']})</td>
                         </tr>
                         <tr>
                           <th>Codigo de retorno</th>
@@ -88,7 +111,7 @@ export default function ErrorEmergente(props) {
                         </tr>
                         <tr>
                           <th>Dia del reporte</th>
-                          <td>{errorObject["Fecha"]}</td>
+                          <td>{fechaErrorNueva}</td>
                         </tr>
                       </tbody>
                     </Table>
@@ -136,7 +159,12 @@ export default function ErrorEmergente(props) {
                     <h5>
                       <strong>Fuentes de consulta: </strong>
                     </h5>
-                    <p>{errorObject["Fuentes"]}</p>
+                    {fuentes.map((fuente, key) => {
+                      if(isValidUrl(fuente)){
+                        return <a key={key} href={fuente}>{fuente}</a>
+                      }
+                      return <p key={key}>{fuente}</p>
+                    })}
                   </Col>
                 </Row>
               </Container>
@@ -158,13 +186,6 @@ export default function ErrorEmergente(props) {
                     {({ blob, url, loading, error }) => (loading ? 'Preparando PDF' : 'Descargar PDF')}
                     </PDFDownloadLink>
                 </button>
-              {/* <MDBBtn
-                color="secondary"
-                onClick={() => setScrollableModal(!setScrollableModal)}
-              >
-                Regresar
-              </MDBBtn> */}
-              {/* <MDBBtn>Descargar PDF</MDBBtn> */}
             </MDBModalFooter>
           </MDBModalContent>
         </MDBModalDialog>

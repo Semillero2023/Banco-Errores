@@ -69,7 +69,7 @@ class Documentacion extends React.Component {
         const documents = [];
         this.state.errores.forEach((doc) => {
             documents.push(
-                <SwiperSlide>
+                <SwiperSlide key={doc.id}>
                     <BoxCard
                         key={doc.id}
                         errorObject={doc.data()}
