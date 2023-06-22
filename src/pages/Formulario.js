@@ -211,7 +211,7 @@ class Formulario extends React.Component {
                             label="Codigo de retorno"
                             name="group1"
                             type={type}
-                            id={`inline-${type}-2`}
+                            id={`inline-${type}-3`}
                             onClick={this.ActivarReturnCode}
                           />
                         </Col>
