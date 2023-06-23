@@ -183,7 +183,7 @@ export default function ErrorEmergente(props) {
                         fileName={errorObject['Nombre_Error']}
                         
                     >  
-                    {({ blob, url, loading, error }) => (loading ? 'Preparando PDF' : 'Descargar PDF')}
+                    {({ blob, url, cargandoPDF, error }) => (cargandoPDF ? 'Preparando PDF' : 'Descargar PDF')}
                     </PDFDownloadLink>
                 </button>
             </MDBModalFooter>

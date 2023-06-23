@@ -29,7 +29,7 @@
   overflow: hidden;
 }
 .z-bigger {
-  z-index: 100 !important;
+  z-index: 1 !important;
 }
 
 .checkbox-tools:checked,

@@ -142,7 +142,7 @@ class Documentacion extends React.Component {
                         containerClassName={styles.pagbutton}
                         previousLinkClassName={"prevbutton"}
                         nextLinkClassName={"nextbutton"}
-                        activeClassName={"activebutton"}
+                        activeClassName={styles.activebutton}
                     />
                 </Container>
             </>

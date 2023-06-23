@@ -105,3 +105,9 @@
   color: #dbf1ff;
   cursor: pointer;
 }
+
+.activebutton a {
+  box-shadow: 0 0 5px #cff2fc, 0 0 40px #d4eef6ad;
+  background-color: rgba(255, 255, 255, 0);
+  color: rgb(255, 255, 255) !important;
+}
