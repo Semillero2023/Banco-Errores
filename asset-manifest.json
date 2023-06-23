@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Banco-Errores/static/css/main.ef1cc8be.css",
-    "main.js": "/Banco-Errores/static/js/main.abc998d4.js",
+    "main.js": "/Banco-Errores/static/js/main.48fc311c.js",
     "static/media/FONDO.png": "/Banco-Errores/static/media/FONDO.8d70906968ff985186f5.png",
     "static/media/LOADER.gif": "/Banco-Errores/static/media/LOADER.c8f6f6fccfbc6997e5ff.gif",
     "static/media/HK.gif": "/Banco-Errores/static/media/HK.11c36fe991c826cb8540.gif",
@@ -9,10 +9,10 @@
     "static/media/SUELO.png": "/Banco-Errores/static/media/SUELO.051bb0f95541a219e886.png",
     "index.html": "/Banco-Errores/index.html",
     "main.ef1cc8be.css.map": "/Banco-Errores/static/css/main.ef1cc8be.css.map",
-    "main.abc998d4.js.map": "/Banco-Errores/static/js/main.abc998d4.js.map"
+    "main.48fc311c.js.map": "/Banco-Errores/static/js/main.48fc311c.js.map"
   },
   "entrypoints": [
     "static/css/main.ef1cc8be.css",
-    "static/js/main.abc998d4.js"
+    "static/js/main.48fc311c.js"
   ]
 }
