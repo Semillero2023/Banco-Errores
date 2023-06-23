@@ -10,7 +10,7 @@ class Reporte extends React.Component {
         //Plantilla de estilos
         Font.register({
           family: 'Roboto',
-          src: 'https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap'
+          src: 'http://fonts.gstatic.com/s/roboto/v16/zN7GBFwfMP4uA6AR0HCoLQ.ttf'
         });
         
         const styles = StyleSheet.create({
